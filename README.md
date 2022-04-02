@@ -6,7 +6,8 @@ Here are some examples of how use and implement different desing patters using C
 Design Patterns already studied
 
 <h3> - Behavioral</h3>
-• Strategy
+• Strategy</br>
+• Singleton</br>
 </br>
 </br>
 </br>
