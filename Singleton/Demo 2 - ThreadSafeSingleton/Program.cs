@@ -1,10 +1,7 @@
-﻿using Demo_1___Naive.Util;
+﻿using Demo_2___ThreadSafeSingleton.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Demo_1___Naive
+namespace Demo_2___ThreadSafeSingleton
 {
     class Program
     {
@@ -23,7 +20,7 @@ namespace Demo_1___Naive
             }
             else if (option == 2)
             {
-                //3 constructor invoked, Naive is not thread safe
+                //Just 1 constructor invoked, thread safe
                 SingletonTest.ParallelTest();
             }
         }

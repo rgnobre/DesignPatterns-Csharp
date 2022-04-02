@@ -1,16 +1,12 @@
-﻿using Demo_1___Naive.Util;
+﻿using Demo_3___BatterLocking.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Demo_1___Naive
+namespace Demo_3___BatterLocking
 {
     class Program
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Choose one of the following tests.");
             Console.WriteLine("1. Multiple Instance");
             Console.WriteLine("2. Parallel Instance");
@@ -23,7 +19,7 @@ namespace Demo_1___Naive
             }
             else if (option == 2)
             {
-                //3 constructor invoked, Naive is not thread safe
+                //Just 1 constructor invoked, thread safe
                 SingletonTest.ParallelTest();
             }
         }
