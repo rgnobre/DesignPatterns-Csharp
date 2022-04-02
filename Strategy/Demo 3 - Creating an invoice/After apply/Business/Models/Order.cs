@@ -1,8 +1,9 @@
-﻿using Strategy_Pattern_Creating_an_invoice.Business.Strategies.SalesTax;
+﻿using Strategy_Pattern_First_Look.Business.Strategies.IStrategies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Strategy_Pattern_Creating_an_invoice.Business.Models
+namespace Strategy_Pattern_First_Look.Business.Models
 {
     public class Order
     {
@@ -21,15 +22,34 @@ namespace Strategy_Pattern_Creating_an_invoice.Business.Models
         public ShippingDetails ShippingDetails { get; set; }
 
         public ISalesTaxStrategy SalesTaxStrategy { get; set; }
+        public IInvoiceStrategy InvoiceStrategy { get; set; }
 
         public decimal GetTax()
         {
-            if(SalesTaxStrategy == null)
+            if (SalesTaxStrategy == null)
             {
-                return 0m;
+                return 0;
             }
 
             return SalesTaxStrategy.GetTaxFor(this);
+
+        }
+
+        public void FinalizeOrder()
+        {
+            if (SelectedPayments
+                .Any(x => x.PaymentProvider == PaymentProvider.Invoice)
+                && AmountDue > 0
+                && ShippingStatus == ShippingStatus.WaitingForPayment)
+            {
+                InvoiceStrategy.Generate(this);
+                ShippingStatus = ShippingStatus.ReadyForShippment;
+            }
+            else if (AmountDue > 0)
+            {
+                throw new Exception("Unable to finalize order");
+            }
+
         }
     }
 
@@ -77,18 +97,18 @@ namespace Strategy_Pattern_Creating_an_invoice.Business.Models
 
         public ItemType ItemType { get; set; }
 
-        //public decimal GetTax()
-        //{
-        //    switch (ItemType)
-        //    {
-        //        case ItemType.Service:
-        //        case ItemType.Food:
-        //        case ItemType.Hardware:
-        //        case ItemType.Literature:
-        //        default:
-        //            return 0m;
-        //    }
-        //}
+        public decimal GetTax()
+        {
+            switch (ItemType)
+            {
+                case ItemType.Service:
+                case ItemType.Food:
+                case ItemType.Hardware:
+                case ItemType.Literature:
+                default:
+                    return 0m;
+            }
+        }
 
         public Item(string id, string name, decimal price, ItemType type)
         {
