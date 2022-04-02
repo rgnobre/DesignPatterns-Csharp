@@ -23,6 +23,7 @@ namespace Strategy_Pattern_First_Look.Business.Models
 
         public ISalesTaxStrategy SalesTaxStrategy { get; set; }
         public IInvoiceStrategy InvoiceStrategy { get; set; }
+        public IShippingStrategy ShippingStrategy{ get; set; }
 
         public decimal GetTax()
         {
@@ -49,6 +50,8 @@ namespace Strategy_Pattern_First_Look.Business.Models
             {
                 throw new Exception("Unable to finalize order");
             }
+
+            ShippingStrategy.Ship(this);
 
         }
     }
