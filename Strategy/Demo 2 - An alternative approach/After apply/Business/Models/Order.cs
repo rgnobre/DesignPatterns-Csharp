@@ -1,4 +1,4 @@
-﻿using Strategy_Pattern_First_Look.Business.Strategies.SalesTax;
+﻿using Strategy_Pattern_First_Look.Business.Strategies.IStrategies;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,10 +28,11 @@ namespace Strategy_Pattern_First_Look.Business.Models
 
             if (strategy == null)
             {
-                return 0m;
+                return 0;
             }
 
             return strategy.GetTaxFor(this);
+
         }
     }
 
@@ -51,8 +52,8 @@ namespace Strategy_Pattern_First_Look.Business.Models
         public string OriginState { get; set; }
     }
 
-    public enum ShippingStatus 
-    { 
+    public enum ShippingStatus
+    {
         WaitingForPayment,
         ReadyForShippment,
         Shipped
@@ -79,18 +80,18 @@ namespace Strategy_Pattern_First_Look.Business.Models
 
         public ItemType ItemType { get; set; }
 
-        //public decimal GetTax()
-        //{
-        //    switch (ItemType)
-        //    {
-        //        case ItemType.Service:
-        //        case ItemType.Food:
-        //        case ItemType.Hardware:
-        //        case ItemType.Literature:
-        //        default:
-        //            return 0m;
-        //    }
-        //}
+        public decimal GetTax()
+        {
+            switch (ItemType)
+            {
+                case ItemType.Service:
+                case ItemType.Food:
+                case ItemType.Hardware:
+                case ItemType.Literature:
+                default:
+                    return 0m;
+            }
+        }
 
         public Item(string id, string name, decimal price, ItemType type)
         {

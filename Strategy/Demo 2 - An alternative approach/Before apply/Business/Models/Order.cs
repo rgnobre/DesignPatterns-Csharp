@@ -1,4 +1,4 @@
-﻿using Strategy_Pattern_First_Look.Business.Strategies.SalesTax;
+﻿using Strategy_Pattern_First_Look.Business.Strategies.IStrategies;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,12 +24,13 @@ namespace Strategy_Pattern_First_Look.Business.Models
 
         public decimal GetTax()
         {
-            if(SalesTaxStrategy == null)
+           if(SalesTaxStrategy == null)
             {
-                return 0m;
+                return 0;
             }
 
             return SalesTaxStrategy.GetTaxFor(this);
+
         }
     }
 
@@ -77,18 +78,18 @@ namespace Strategy_Pattern_First_Look.Business.Models
 
         public ItemType ItemType { get; set; }
 
-        //public decimal GetTax()
-        //{
-        //    switch (ItemType)
-        //    {
-        //        case ItemType.Service:
-        //        case ItemType.Food:
-        //        case ItemType.Hardware:
-        //        case ItemType.Literature:
-        //        default:
-        //            return 0m;
-        //    }
-        //}
+        public decimal GetTax()
+        {
+            switch (ItemType)
+            {
+                case ItemType.Service:
+                case ItemType.Food:
+                case ItemType.Hardware:
+                case ItemType.Literature:
+                default:
+                    return 0m;
+            }
+        }
 
         public Item(string id, string name, decimal price, ItemType type)
         {
