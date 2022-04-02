@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo 4 - Static Constructors and Singleton", "Demo 4 - Static Constructors and Singleton.csproj", "{4EFF82EE-7988-44C3-BDD8-A4A3911A0B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo  - NestedLazy", "..\Demo  - NestedLazy\Demo  - NestedLazy.csproj", "{EDEDAAE9-72AD-4A78-877A-F8A52C002867}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EFF82EE-7988-44C3-BDD8-A4A3911A0B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFF82EE-7988-44C3-BDD8-A4A3911A0B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFF82EE-7988-44C3-BDD8-A4A3911A0B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFF82EE-7988-44C3-BDD8-A4A3911A0B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEDAAE9-72AD-4A78-877A-F8A52C002867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEDAAE9-72AD-4A78-877A-F8A52C002867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEDAAE9-72AD-4A78-877A-F8A52C002867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEDAAE9-72AD-4A78-877A-F8A52C002867}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6546E8F4-0AB9-48A1-A641-66EE2334AFB0}
+	EndGlobalSection
+EndGlobal
