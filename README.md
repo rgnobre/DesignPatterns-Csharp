@@ -8,6 +8,7 @@ Design Patterns already studied
 <h3> - Behavioral</h3>
 • Strategy</br>
 • Singleton</br>
+• Command</br>
 </br>
 </br>
 </br>
