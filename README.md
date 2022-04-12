@@ -9,6 +9,7 @@ Design Patterns already studied
 • Strategy</br>
 • Singleton</br>
 • Command</br>
+• Bridge</br>
 </br>
 </br>
 </br>
