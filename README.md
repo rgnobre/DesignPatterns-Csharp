@@ -10,6 +10,7 @@ Design Patterns already studied
 • Singleton</br>
 • Command</br>
 • Bridge</br>
+• NullObject</br>
 </br>
 </br>
 </br>
